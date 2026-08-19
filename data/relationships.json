@@ -1,0 +1,570 @@
+[
+  {
+    "id": "nvda-tsm-supplier-01",
+    "counterparty": {"name": "Taiwan Semiconductor Manufacturing Co.", "ticker": "TSM", "exchange": "NYSE"},
+    "relationship_type": "supplier",
+    "direction": "TSM -> NVDA (TSM 是 NVIDIA 的晶圓代工廠，NVIDIA 為買方)",
+    "status": "confirmed_ongoing",
+    "summary": "TSMC 是 NVIDIA 先進製程 GPU/AI 加速晶片的主要晶圓代工夥伴，長年維持獨家或近乎獨家的先進節點代工關係。",
+    "quantified_terms": {"note": "NVIDIA 於 10-K 風險因子中揭露高度依賴單一晶圓代工廠，未揭露具體美元金額"},
+    "evidence": [
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+        "publisher": "U.S. SEC (NVIDIA 10-K, FY2025)",
+        "published_date": "2025-02-26",
+        "source_type": "regulatory_filing",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "10-K「Risk Factors / Manufacturing」章節，關於單一晶圓代工供應商集中風險之揭露"
+      },
+      {
+        "source_url": "https://intuitionlabs.ai/articles/nvidia-gb200-supply-chain",
+        "publisher": "IntuitionLabs",
+        "published_date": "2025-06-01",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章說明 GB200 供應鏈中 TSMC 作為晶圓代工與 CoWoS 封裝角色"
+      }
+    ],
+    "notes": "此為業界最廣泛引用、風險最集中的供應鏈關係之一，NVIDIA 對台灣供應鏈（TSMC 為核心）依賴度在多份報告中被反覆量化說明。"
+  },
+  {
+    "id": "nvda-skhynix-supplier-01",
+    "counterparty": {"name": "SK Hynix Inc.", "ticker": "000660.KS", "exchange": "KRX"},
+    "relationship_type": "supplier",
+    "direction": "SK Hynix -> NVDA (HBM 高頻寬記憶體供應商)",
+    "status": "confirmed_ongoing",
+    "summary": "SK Hynix 為 NVIDIA GPU 所需 HBM（含新一代 HBM4）記憶體的主力供應商之一，並已通過 NVIDIA Rubin 平台的 HBM4 認證。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march/",
+        "publisher": "TrendForce",
+        "published_date": "2026-03-09",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導指出 SK Hynix 與 Samsung 被選為 NVIDIA Rubin HBM4 供應商，出貨最快 3 月開始"
+      },
+      {
+        "source_url": "https://finance.yahoo.com/sectors/technology/articles/nvidia-certifies-samsung-sk-hynix-133001560.html",
+        "publisher": "Yahoo Finance",
+        "published_date": "2026-02-20",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "NVIDIA 完成 Samsung、SK Hynix、Micron 三家 HBM4 認證之報導"
+      }
+    ],
+    "notes": "與 Samsung 的認證進度存在時間差（見 samsung 關係紀錄），顯示同一供應鏈環節內不同供應商的關係強度並不相同。"
+  },
+  {
+    "id": "nvda-samsung-supplier-01",
+    "counterparty": {"name": "Samsung Electronics Co., Ltd.", "ticker": "005930.KS", "exchange": "KRX"},
+    "relationship_type": "supplier",
+    "direction": "Samsung -> NVDA (HBM 記憶體供應商，認證進度反覆)",
+    "status": "disputed_conflicting_reports",
+    "summary": "Samsung 的 HBM 對 NVIDIA 供貨資格歷經反覆：曾被報導 HBM3e 認證多次延遲失敗（並轉供 AMD 作為替代），但 2026 年報導稱其已通過 Rubin 平台 HBM4 認證。此關係的時效性與方向需持續追蹤，不宜視為穩定供應商關係。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://techstock01.substack.com/p/sk-hynix-and-micron-hbm4-qualification",
+        "publisher": "TechStock01 (Substack)",
+        "published_date": "2026-01-15",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章標題與內文指出 Samsung 在 HBM3e 世代仍未通過 NVIDIA 認證，轉而供貨 AMD 作為『安慰獎』"
+      },
+      {
+        "source_url": "https://finance.yahoo.com/sectors/technology/articles/nvidia-certifies-samsung-sk-hynix-133001560.html",
+        "publisher": "Yahoo Finance",
+        "published_date": "2026-02-20",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導稱 NVIDIA 已完成對 Samsung 的 HBM4（Vera Rubin 世代）認證"
+      }
+    ],
+    "notes": "刻意保留此則『前後矛盾』的報導作為示範：evidence 陣列中兩則來源在時間先後上出現方向逆轉，系統以 status=disputed_conflicting_reports 明確標示，而非隱藏矛盾、強行給出單一結論。"
+  },
+  {
+    "id": "nvda-micron-supplier-01",
+    "counterparty": {"name": "Micron Technology, Inc.", "ticker": "MU", "exchange": "NASDAQ"},
+    "relationship_type": "supplier",
+    "direction": "Micron -> NVDA (HBM4 記憶體供應商)",
+    "status": "confirmed_ongoing",
+    "summary": "Micron 是 NVIDIA HBM4（Vera Rubin 平台世代）記憶體的已認證供應商之一。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://techstock01.substack.com/p/sk-hynix-and-micron-hbm4-qualification",
+        "publisher": "TechStock01 (Substack)",
+        "published_date": "2026-01-15",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章標題明確指出 SK Hynix 與 Micron 的 HBM4 認證『已成定局』"
+      }
+    ],
+    "notes": "僅有單一來源佐證，且來源類型為個人 Substack 聚合分析，非公司或監管一手來源，故信賴度評分會相對偏低（見 scoring 說明）。"
+  },
+  {
+    "id": "nvda-amkor-supplier-01",
+    "counterparty": {"name": "Amkor Technology, Inc.", "ticker": "AMKR", "exchange": "NASDAQ"},
+    "relationship_type": "supplier",
+    "direction": "Amkor -> NVDA (先進封裝與測試供應商)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 與 Amkor 於 2026 年 7 月簽署一項為期多年、金額 15 億美元的合作協議，由 NVIDIA 預付款支持 Amkor 在美國（亞利桑那州）擴建先進封裝與測試產能，聚焦 NVIDIA AI／加速運算平台的先進封裝需求。",
+    "quantified_terms": {"amount_usd": 1500000000, "type": "prepayment / capacity expansion agreement", "region": "Arizona, USA"},
+    "evidence": [
+      {
+        "source_url": "https://www.marketscreener.com/news/nvidia-amkor-strike-1-5-billion-chip-packaging-deal-ce7f51ded08ef42d",
+        "publisher": "MarketScreener",
+        "published_date": "2026-07-23",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認 15 億美元金額、簽署日期與亞利桑那州擴產範疇"
+      }
+    ],
+    "notes": "具體美元金額與時間點明確，屬於本資料集中『可量化資訊』評分加成的代表案例之一。"
+  },
+  {
+    "id": "nvda-foxconn-supplier-01",
+    "counterparty": {"name": "Hon Hai Precision Industry Co., Ltd. (Foxconn)", "ticker": "2317.TW", "exchange": "TWSE"},
+    "relationship_type": "supplier",
+    "direction": "Foxconn -> NVDA (伺服器/機櫃系統委託製造)",
+    "status": "confirmed_ongoing",
+    "summary": "Foxconn 長期是 NVIDIA GB200/GB300 NVL72 等機櫃級 AI 伺服器系統的主要組裝與委託製造夥伴。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.digitimes.com/news/a20260212PD228/foxconn-ai-server-nvidia-2026.html",
+        "publisher": "DigiTimes",
+        "published_date": "2026-02-12",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導提及 NVIDIA CEO 稱讚 Foxconn 在 AI 伺服器組裝上的領先地位"
+      }
+    ],
+    "notes": "與下方 partner 關係紀錄（AI Factory / NVIDIA Cloud Partner）為同一組織的不同關係面向，刻意拆分為兩筆紀錄以避免將『代工』與『策略合作』混為一談。"
+  },
+  {
+    "id": "nvda-foxconn-partner-01",
+    "counterparty": {"name": "Hon Hai Precision Industry Co., Ltd. (Foxconn)", "ticker": "2317.TW", "exchange": "TWSE"},
+    "relationship_type": "partner",
+    "direction": "bidirectional (聯合建置 AI Factory / 雲端服務)",
+    "status": "confirmed_ongoing",
+    "summary": "2025 年 5 月 19 日，Foxconn 與 NVIDIA 於台北宣布合作於台灣建置 AI Factory 超級電腦中心，採用 NVIDIA Blackwell Ultra（GB300 NVL72）系統；Foxconn 子公司 Big Innovation 成為台灣首家 NVIDIA Cloud Partner（NCP），運算資源將貢獻至 NVIDIA DGX Cloud Lepton 平台，服務對象含產業、政府與學研（含 TSMC 研究團隊）。",
+    "quantified_terms": {"note": "官方公告未揭露具體投資金額"},
+    "evidence": [
+      {
+        "source_url": "https://www.foxconn.com/en-us/press-center/events/foxconn-events/1599",
+        "publisher": "Hon Hai Technology Group (官方新聞稿)",
+        "published_date": "2025-05-19",
+        "source_type": "company_press_release",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "官方新聞稿標題與內文，說明 AI Factory、NCP 身份與三大策略平台（智慧製造、智慧電動車、智慧城市）"
+      },
+      {
+        "source_url": "https://www.constellationr.com/insights/news/nvidia-foxconn-aim-build-ai-factories-collaborate-evs-robotics",
+        "publisher": "Constellation Research",
+        "published_date": "2025-05-20",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "第三方報導交叉確認 AI Factory 與 EV/機器人協作方向"
+      }
+    ],
+    "notes": "同時具備官方新聞稿（一手來源）與獨立第三方報導佐證，屬於本資料集信賴度評分最高的關係之一。"
+  },
+  {
+    "id": "nvda-msft-customer-01",
+    "counterparty": {"name": "Microsoft Corporation", "ticker": "MSFT", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "MSFT -> NVDA (Azure AI 基礎設施採購方)",
+    "status": "confirmed_ongoing",
+    "summary": "Microsoft 被廣泛認為是 NVIDIA 前幾大客戶之一，透過 Azure 大量採購 NVIDIA GPU 建置 AI 雲端基礎設施；NVIDIA 未在財報中具名揭露客戶身份，此為市場依採購規模與資本支出報導推斷之關係。",
+    "quantified_terms": {"note": "四大雲端業者合計資本支出約 7,100-7,250 億美元（2025-2026），但個別對 NVIDIA 採購占比未單獨揭露"},
+    "evidence": [
+      {
+        "source_url": "https://www.barchart.com/story/news/25922170/who-are-nvidias-largest-customers",
+        "publisher": "Barchart",
+        "published_date": "2026-04-10",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Microsoft 列為業界普遍認為的 NVIDIA 最大客戶之一，並引用 10-K 揭露的未具名客戶集中度數字"
+      }
+    ],
+    "notes": "NVIDIA 10-K 僅揭露『單一客戶佔運算與網路部門營收 13%』『間接客戶佔總營收 19%』等未具名數字，Microsoft 等公司身份為市場推斷而非公司自行揭露，故信賴度評分低於有一手來源具名的關係。"
+  },
+  {
+    "id": "nvda-amzn-customer-01",
+    "counterparty": {"name": "Amazon.com, Inc.", "ticker": "AMZN", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "AMZN -> NVDA (AWS AI 基礎設施採購方)",
+    "status": "confirmed_ongoing",
+    "summary": "Amazon（AWS）被市場普遍認為是 NVIDIA 前幾大客戶之一，用於 AWS AI/雲端運算服務建置。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.barchart.com/story/news/25922170/who-are-nvidias-largest-customers",
+        "publisher": "Barchart",
+        "published_date": "2026-04-10",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Amazon 列為業界普遍認為的 NVIDIA 大型客戶之一"
+      }
+    ],
+    "notes": "與 Microsoft relationship 相同限制：未具名財報揭露 + 市場推斷，信賴度中等。"
+  },
+  {
+    "id": "nvda-meta-customer-01",
+    "counterparty": {"name": "Meta Platforms, Inc.", "ticker": "META", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "META -> NVDA (AI 基礎設施採購方)",
+    "status": "confirmed_ongoing",
+    "summary": "Meta 被市場普遍認為是 NVIDIA 前幾大客戶之一，大量採購 GPU 用於自家 AI 模型訓練與資料中心建置。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.barchart.com/story/news/25922170/who-are-nvidias-largest-customers",
+        "publisher": "Barchart",
+        "published_date": "2026-04-10",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Meta 列為業界普遍認為的 NVIDIA 大型客戶之一"
+      }
+    ],
+    "notes": "與 Microsoft/Amazon 同屬市場推斷型客戶關係。"
+  },
+  {
+    "id": "nvda-googl-customer-01",
+    "counterparty": {"name": "Alphabet Inc.", "ticker": "GOOGL", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "GOOGL -> NVDA (Google Cloud AI 基礎設施採購方)",
+    "status": "confirmed_ongoing",
+    "summary": "Alphabet（Google Cloud）被市場普遍認為是 NVIDIA 前幾大客戶之一，同時 Google 也自行研發 TPU 客製晶片（見 peer 關係說明），形成『既是客戶也是潛在競爭』的複合關係。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.barchart.com/story/news/25922170/who-are-nvidias-largest-customers",
+        "publisher": "Barchart",
+        "published_date": "2026-04-10",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Alphabet/Google 列為業界普遍認為的 NVIDIA 大型客戶之一"
+      }
+    ],
+    "notes": "刻意保留作為『同一實體同時具備 customer 與潛在 peer 動機』的示範案例；本資料集未另立 Alphabet 的 peer 紀錄，因 TPU 對外銷售規模尚未達到與 NVIDIA GPU 業務直接可比的公開量化基礎。"
+  },
+  {
+    "id": "nvda-tsla-customer-01",
+    "counterparty": {"name": "Tesla, Inc.", "ticker": "TSLA", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "TSLA -> NVDA (AI 訓練叢集採購方)",
+    "status": "confirmed_ongoing",
+    "summary": "Tesla 為 NVIDIA GPU 客戶，用於訓練自駕/機器人相關 AI 模型；報導指出 Tesla 曾部署約 35,000 顆 H100 GPU 建置超級電腦叢集。",
+    "quantified_terms": {"gpu_count": 35000, "gpu_model": "H100"},
+    "evidence": [
+      {
+        "source_url": "https://www.barchart.com/story/news/25922170/who-are-nvidias-largest-customers",
+        "publisher": "Barchart",
+        "published_date": "2026-04-10",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章提及 Tesla 部署 35,000 顆 H100 GPU 建置超級電腦"
+      }
+    ],
+    "notes": "具備具體可量化數字（GPU 顆數），評分優於僅有定性描述的客戶關係。"
+  },
+  {
+    "id": "nvda-pltr-partner-01",
+    "counterparty": {"name": "Palantir Technologies Inc.", "ticker": "PLTR", "exchange": "NASDAQ"},
+    "relationship_type": "partner",
+    "direction": "bidirectional (企業 AI 軟體整合)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 於 2026 年宣布與 Palantir 建立 AI 合作關係，將 NVIDIA 運算平台與 Palantir 的企業級 AI 決策軟體整合。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.foxbusiness.com/markets/nvidia-launches-massive-ai-push-major-partnerships-across-multiple-industries",
+        "publisher": "Fox Business",
+        "published_date": "2026-01-08",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導標題與內文列出 Palantir 為 NVIDIA 新宣布的 AI 合作夥伴之一"
+      }
+    ],
+    "notes": "僅有單一媒體來源，未附官方新聞稿連結，信賴度中等偏低。"
+  },
+  {
+    "id": "nvda-tmus-partner-01",
+    "counterparty": {"name": "T-Mobile US, Inc.", "ticker": "TMUS", "exchange": "NASDAQ"},
+    "relationship_type": "partner",
+    "direction": "bidirectional (電信 AI 基礎設施合作)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 與 T-Mobile 宣布 AI 相關合作，聚焦電信網路與 AI 基礎設施結合。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.foxbusiness.com/markets/nvidia-launches-massive-ai-push-major-partnerships-across-multiple-industries",
+        "publisher": "Fox Business",
+        "published_date": "2026-01-08",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導列出 T-Mobile 為同批宣布的合作夥伴之一"
+      }
+    ],
+    "notes": "與 Palantir、Uber 為同一則新聞的三個合作對象，本資料集拆成三筆獨立紀錄以利個別追蹤與評分。"
+  },
+  {
+    "id": "nvda-uber-partner-01",
+    "counterparty": {"name": "Uber Technologies, Inc.", "ticker": "UBER", "exchange": "NYSE"},
+    "relationship_type": "partner",
+    "direction": "bidirectional (自駕/AI 應用合作)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 與 Uber 宣布 AI 合作，方向涉及自駕車或 AI 派遣相關應用（報導未提供完整技術細節）。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.foxbusiness.com/markets/nvidia-launches-massive-ai-push-major-partnerships-across-multiple-industries",
+        "publisher": "Fox Business",
+        "published_date": "2026-01-08",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導列出 Uber 為同批宣布的合作夥伴之一"
+      }
+    ],
+    "notes": "技術細節與範疇在單一來源中描述有限，屬於本資料集中『定性描述、證據深度較淺』的代表案例。"
+  },
+  {
+    "id": "nvda-smci-partner-01",
+    "counterparty": {"name": "Super Micro Computer, Inc.", "ticker": "SMCI", "exchange": "NASDAQ"},
+    "relationship_type": "partner",
+    "direction": "bidirectional (AI 伺服器製造合作，含美國本地合規)",
+    "status": "confirmed_ongoing",
+    "summary": "Supermicro 官方宣布擴大與 NVIDIA 的合作，強化美國在地製造 AI 基礎設施解決方案的合規性、資料完整性與品質，聚焦政府相關應用場景。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://www.supermicro.com/en/pressreleases/supermicro-expands-collaboration-nvidia-and-strengthens-compliance-data-integrity-and",
+        "publisher": "Super Micro Computer, Inc. (官方新聞稿)",
+        "published_date": "2026-04-02",
+        "source_type": "company_press_release",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "官方新聞稿標題與內文說明合作擴大範疇"
+      }
+    ],
+    "notes": "一手公司新聞稿來源，信賴度高於單純第三方媒體轉述的合作案例。"
+  },
+  {
+    "id": "nvda-intel-investor-01",
+    "counterparty": {"name": "Intel Corporation", "ticker": "INTC", "exchange": "NASDAQ"},
+    "relationship_type": "investor_or_investee",
+    "direction": "NVDA -> INTC (NVIDIA 投資 Intel 股權)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 於 2025 年對 Intel 投資 50 億美元股權，作為雙方策略性 AI 基礎設施合作的一部分；截至 2026 年中，該持股帳面浮盈約 250 億美元，總值逼近 300 億美元（未實現獲利，尚未出售變現）。",
+    "quantified_terms": {"initial_investment_usd": 5000000000, "unrealized_value_usd": 30000000000, "year_invested": 2025},
+    "evidence": [
+      {
+        "source_url": "https://www.tomshardware.com/tech-industry/nvidia-turns-usd5b-intel-stock-bet-into-usd30b-windfall-filing-reveals-new-usd21b-spacex-stake-and-complete-exit-from-arm-stock",
+        "publisher": "Tom's Hardware",
+        "published_date": "2026-06-01",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章引用監理揭露文件，說明 50 億美元原始投資與約 300 億美元現值"
+      }
+    ],
+    "notes": "金額為未實現帳面獲利，非已實現現金；同一實體（Intel）在本資料集中同時具備 investor_or_investee 與 peer（見下）兩種關係類型，代表『既是被投資對象、也是市場競爭者』的複合現實。"
+  },
+  {
+    "id": "nvda-intel-peer-01",
+    "counterparty": {"name": "Intel Corporation", "ticker": "INTC", "exchange": "NASDAQ"},
+    "relationship_type": "peer",
+    "direction": "bidirectional (資料中心 CPU/晶圓代工與 NVIDIA 存在部分業務重疊與競爭)",
+    "status": "confirmed_ongoing",
+    "summary": "儘管 NVIDIA 對 Intel 有策略性股權投資，兩家公司在資料中心運算平台、晶圓代工（Intel Foundry vs. NVIDIA 依賴 TSMC）等領域仍被市場視為部分競爭關係，常見於同業比較報告。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://startupbootedfundraising.com/intel-competitors/",
+        "publisher": "行業分析網站",
+        "published_date": "2026-03-01",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 NVIDIA 列為 Intel 在資料中心與 AI 運算領域的主要競爭者之一"
+      }
+    ],
+    "notes": "peer 類型的證據多為分析網站的同業歸類，非公司自陳，量化基礎薄弱，故信賴度評分刻意偏低，避免『競爭關係』被過度武斷地量化。"
+  },
+  {
+    "id": "nvda-arm-investor-01",
+    "counterparty": {"name": "Arm Holdings plc", "ticker": "ARM", "exchange": "NASDAQ"},
+    "relationship_type": "investor_or_investee",
+    "direction": "NVDA -> ARM (NVIDIA 曾持有 Arm 股權，已完全出清)",
+    "status": "exited_historical",
+    "summary": "NVIDIA 曾持有約 110 萬股 Arm Holdings 股份（揭露當時價值約 1.781 億美元），截至最新監理揭露文件，NVIDIA 已完全出清 Arm 持股；文章同時指出 NVIDIA 仍會持續開發基於 Arm 架構的 CPU 產品，投資關係結束不代表技術授權關係結束。",
+    "quantified_terms": {"shares_sold": 1100000, "disclosed_value_usd_at_prior_period": 178100000},
+    "evidence": [
+      {
+        "source_url": "https://www.tomshardware.com/tech-industry/nvidia-turns-usd5b-intel-stock-bet-into-usd30b-windfall-filing-reveals-new-usd21b-spacex-stake-and-complete-exit-from-arm-stock",
+        "publisher": "Tom's Hardware",
+        "published_date": "2026-06-01",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章引用監理揭露文件，明確說明 NVIDIA 完全出清 Arm 股份"
+      }
+    ],
+    "notes": "刻意保留此則『已結束』的關係作為時效性處理示範：status 標示為 exited_historical，API 查詢時可依此篩除，避免將歷史關係誤判為目前仍存在的持股關係。"
+  },
+  {
+    "id": "nvda-crwv-investor-01",
+    "counterparty": {"name": "CoreWeave, Inc.", "ticker": "CRWV", "exchange": "NASDAQ"},
+    "relationship_type": "investor_or_investee",
+    "direction": "NVDA -> CRWV (NVIDIA 持股 + 額外資金挹注)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 是 CoreWeave 上市前既有的股權投資人，2026 年 1 月再加碼投資 20 億美元協助其擴充 5GW AI 運算容量；CoreWeave 於 2025 年 3 月完成 IPO 掛牌（NASDAQ: CRWV），使該持股關係成為可公開查證的上市公司關係。",
+    "quantified_terms": {"additional_investment_usd": 2000000000, "capacity_target_gw": 5, "ipo_date": "2025-03"},
+    "evidence": [
+      {
+        "source_url": "https://techcrunch.com/2026/01/26/nvidia-invests-2b-to-help-debt-ridden-coreweave-add-5gw-of-ai-compute/",
+        "publisher": "TechCrunch",
+        "published_date": "2026-01-26",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認 20 億美元加碼投資與 5GW 運算容量目標"
+      },
+      {
+        "source_url": "https://benzinga.com/news/ipos/25/03/44520808/nvidia-backed-coreweave-ipo-5-things-investors-need-to-know-before-buying-shares",
+        "publisher": "Benzinga",
+        "published_date": "2025-03-01",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認 NVIDIA 為 CoreWeave IPO 前既有投資人身份"
+      }
+    ],
+    "notes": "CoreWeave 同時也是 NVIDIA 的重要客戶（見下方 customer 紀錄），形成『投資人 + 客戶』雙重關係，是研究供應鏈與資本關係交織現象的代表案例。"
+  },
+  {
+    "id": "nvda-crwv-customer-01",
+    "counterparty": {"name": "CoreWeave, Inc.", "ticker": "CRWV", "exchange": "NASDAQ"},
+    "relationship_type": "customer",
+    "direction": "CRWV -> NVDA (CoreWeave 向 NVIDIA 採購 GPU 雲端容量訂單)",
+    "status": "confirmed_ongoing",
+    "summary": "CoreWeave 於 2025 年 9 月揭露一筆 63 億美元的 NVIDIA 訂單，用於雲端運算容量建置，帶動股價上漲。",
+    "quantified_terms": {"amount_usd": 6300000000},
+    "evidence": [
+      {
+        "source_url": "https://www.cnbc.com/2025/09/15/coreweave-stock-jumps-on-disclosure-of-6point3-billion-order-from-nvidia.html",
+        "publisher": "CNBC",
+        "published_date": "2025-09-15",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認 63 億美元訂單金額與揭露日期"
+      }
+    ],
+    "notes": "具體美元金額與明確揭露日期，屬於高信賴度、可量化的客戶關係範例。"
+  },
+  {
+    "id": "nvda-nbis-investor-01",
+    "counterparty": {"name": "Nebius Group N.V.", "ticker": "NBIS", "exchange": "NASDAQ"},
+    "relationship_type": "investor_or_investee",
+    "direction": "NVDA -> NBIS (股權投資 + 全端 AI 雲端技術合作)",
+    "status": "confirmed_ongoing",
+    "summary": "NVIDIA 於 2026 年 3 月 11 日宣布對 Nebius 投資 20 億美元，Nebius 承諾至 2030 年底前部署超過 5GW 的 NVIDIA 系統容量，合作範疇涵蓋 AI Factory 設計支援、推理/代理式 AI 技術堆疊、NVIDIA Rubin 平台等基礎設施部署。",
+    "quantified_terms": {"amount_usd": 2000000000, "compute_commitment_gw": 5, "commitment_deadline": "2030-12-31"},
+    "evidence": [
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926026163/tm268532d1_ex99-1.htm",
+        "publisher": "U.S. SEC (Nebius 8-K 附件新聞稿)",
+        "published_date": "2026-03-11",
+        "source_type": "regulatory_filing",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "SEC 揭露文件附件之聯合新聞稿全文，含投資金額與 5GW 容量承諾"
+      },
+      {
+        "source_url": "https://www.cnbc.com/2026/03/11/nebius-nvidia-ai-cloud.html",
+        "publisher": "CNBC",
+        "published_date": "2026-03-11",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認 20 億美元投資消息推升 Nebius 股價 16%"
+      }
+    ],
+    "notes": "同時具備監理揭露文件（regulatory_filing）與獨立媒體報導佐證，且金額、日期、量化承諾皆明確，屬本資料集信賴度評分最高的關係之一。"
+  },
+  {
+    "id": "nvda-amd-peer-01",
+    "counterparty": {"name": "Advanced Micro Devices, Inc.", "ticker": "AMD", "exchange": "NASDAQ"},
+    "relationship_type": "peer",
+    "direction": "bidirectional (資料中心 GPU/AI 加速晶片直接競爭)",
+    "status": "confirmed_ongoing",
+    "summary": "AMD 為 NVIDIA 在資料中心 GPU 與 AI 加速晶片市場最直接的競爭對手，兩者在產品世代（如 MI 系列 vs. Blackwell/Rubin）上持續正面競爭，並普遍被分析師與媒體並列比較。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://trendxinsights.com/blogs/ai-chip-wars-2026-deep-dive/",
+        "publisher": "TrendX Insights",
+        "published_date": "2026-05-01",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 NVIDIA、AMD、Broadcom、Intel 並列為 2026 年 AI 晶片戰的主要參戰者"
+      }
+    ],
+    "notes": "peer 關係本質上較難有『一手來源』佐證（沒有公司會正式發布『我們是競爭對手』的新聞稿），故本資料集的 peer 類型評分上限刻意低於 supplier/customer/investor 等具契約性質的關係，此設計邏輯在 scoring 模組中有明確實作。"
+  },
+  {
+    "id": "nvda-avgo-peer-01",
+    "counterparty": {"name": "Broadcom Inc.", "ticker": "AVGO", "exchange": "NASDAQ"},
+    "relationship_type": "peer",
+    "direction": "bidirectional (客製 AI ASIC 與網路互連晶片競爭)",
+    "status": "confirmed_ongoing",
+    "summary": "Broadcom 透過為 Google、Meta 等雲端業者設計客製 AI ASIC，以及網路交換晶片（與 NVIDIA Spectrum-X/NVLink 競爭），被視為 NVIDIA 在『客製晶片』與『AI 網路互連』兩個面向的重要競爭者。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://trendxinsights.com/blogs/ai-chip-wars-2026-deep-dive/",
+        "publisher": "TrendX Insights",
+        "published_date": "2026-05-01",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Broadcom 列為 NVIDIA 在 AI 晶片市場的主要競爭者之一"
+      }
+    ],
+    "notes": "同 AMD 案例，屬於媒體歸類型 peer 關係，非契約關係。"
+  },
+  {
+    "id": "nvda-qcom-peer-01",
+    "counterparty": {"name": "QUALCOMM Incorporated", "ticker": "QCOM", "exchange": "NASDAQ"},
+    "relationship_type": "peer",
+    "direction": "bidirectional (新進入資料中心 AI 推論晶片市場)",
+    "status": "confirmed_ongoing",
+    "summary": "Qualcomm 於 2025 年 10 月正式發表 AI200、AI250 資料中心 AI 推論晶片，被多家媒體定位為挑戰 NVIDIA（與 AMD）在資料中心 AI 市場地位的新進競爭者，宣布當日股價上漲約 11%。",
+    "quantified_terms": {"stock_reaction_pct": 11, "products": ["AI200", "AI250"]},
+    "evidence": [
+      {
+        "source_url": "https://www.cnbc.com/2025/10/27/qualcomm-ai200-ai250-ai-chips-nvidia-amd.html",
+        "publisher": "CNBC",
+        "published_date": "2025-10-27",
+        "source_type": "reputable_news",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "報導確認發表日期、產品名稱與股價反應百分比"
+      }
+    ],
+    "notes": "屬於『新進入者』型 peer 關係，時效性高（2025 年底才正式進入市場），與 AMD/Broadcom 等長期既有競爭者性質不同，README 方法論中特別區分『既有競爭者』與『新進入者』兩種 peer 子類型。"
+  },
+  {
+    "id": "nvda-mrvl-peer-01",
+    "counterparty": {"name": "Marvell Technology, Inc.", "ticker": "MRVL", "exchange": "NASDAQ"},
+    "relationship_type": "peer",
+    "direction": "bidirectional (客製 AI 晶片/資料中心互連競爭)",
+    "status": "confirmed_ongoing",
+    "summary": "Marvell 透過為雲端業者設計客製 AI 晶片與資料中心互連方案，被視為 NVIDIA 在客製化 AI 運算領域的可比較競爭者之一。",
+    "quantified_terms": null,
+    "evidence": [
+      {
+        "source_url": "https://trendxinsights.com/blogs/ai-chip-wars-2026-deep-dive/",
+        "publisher": "TrendX Insights",
+        "published_date": "2026-05-01",
+        "source_type": "secondary_aggregator",
+        "accessed_date": "2026-08-19",
+        "evidence_locator": "文章將 Marvell 列為 AI 晶片戰的參戰者之一（雖非主要焦點）"
+      }
+    ],
+    "notes": "本資料集中證據深度最淺的 peer 關係之一，僅在較廣泛的產業綜述文章中被提及，刻意保留以展示評分機制如何反映『證據薄弱』。"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "subject_company": {
+    "name": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "exchange": "NASDAQ",
+    "cik": "0001045810",
+    "sec_filer_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810",
+    "sector": "Semiconductors / AI Compute Infrastructure"
+  },
+  "research_as_of": "2026-08-19",
+  "research_window": {
+    "start": "2025-01-01",
+    "end": "2026-08-19",
+    "note": "只涵蓋此區間內可公開查證、有明確發布時間的關係事件；區間前的歷史關係僅在對理解目前狀態必要時（例如 Arm 持股的建立與出清）作為背景引用。"
+  },
+  "scope": {
+    "covered": [
+      "與 NVIDIA 有直接、可公開查證關係的上市公司（美股、台股、韓股等具公開交易代碼者）",
+      "關係類型：supplier（NVIDIA 的上游供應商）、customer（NVIDIA 的下游客戶／買方）、partner（技術或商業合作但非單純買賣）、investor_or_investee（股權投資，涵蓋 NVIDIA 投資他方或他方投資 NVIDIA 兩個方向）、peer（在 AI 運算 / 半導體市場中被普遍視為可比較或直接競爭的公司）"
+    ],
+    "not_covered": [
+      "未上市公司（例如 OpenAI、xAI、Anthropic、SpaceX）：即使商業或投資關係重大且高度公開報導（如 NVIDIA 對 OpenAI 至多 1000 億美元的投資意向、對 SpaceX 約 210 億美元的持股），因不具備公開交易代碼、無法以監管揭露文件交叉驗證持股數字，故不列入主資料集評分，僅在 README 附錄以說明性文字揭露，並標註排除原因",
+      "NVIDIA 內部產品線、組織架構、人事異動",
+      "非公開或需登入/付費牆的資料來源（例如需付費的產業資料庫全文、需登入的社群貼文）",
+      "傳言、匿名爆料、未附一手來源佐證的社群媒體貼文"
+    ],
+    "known_blind_spots": [
+      "供應鏈的第二層、第三層供應商（例如個別測試設備商、稀有材料供應商）未逐一列出，僅涵蓋一階、具重大揭露意義的關係",
+      "部分關係金額為財報揭露的『佔營收百分比』而非公司實名（例如 NVIDIA 10-K 揭露的「間接客戶佔總營收 19%」），此類未具名關係不納入具名關係列表，僅在 README 附錄說明",
+      "非英語 / 非公開財報語系（例如部分中國廠商的中文公告）未系統性納入，可能低估中國供應鏈曝險",
+      "本資料集為研究挑戰的時間快照（2026-08-19），供應鏈與合作關係變動速度快，實際使用時應以 API 的 evidence.published_date 判斷資訊是否過期"
+    ]
+  },
+  "disclaimer": "本文件與資料集僅為求職挑戰之研究與工程能力展示，基於公開資訊整理，不構成任何投資建議。所有信賴度評分為方法論示範，非投資決策依據。"
+}
